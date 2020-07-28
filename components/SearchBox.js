@@ -3,26 +3,26 @@ import axios from 'axios'
 
 const SearchBox = props => {
   const [searchVal, setSearchVal] = useState('')
-  const [result, setResult] = useState(null)
+  const [results, setResults] = useState(null)
   return (
     <div style={{margin: 'auto', display: 'flex', alignItems: 'center', flexDirection:'column' }}>
       <form onSubmit={e => {
         e.preventDefault()
-        axios.get('/api/search')
-          .then(e => setResult(e.data))
+        axios.get(`/api/gosearch?name=${searchVal}`)
+          .then(e => setResults(e.data))
       }}>
         <input 
           value={searchVal} 
           onChange={e => setSearchVal(e.target.value)} 
         />
       </form>
-      <div style={{maxWidth: 300, alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
-        {result && (
-          <div>
-            <h1>{result.name}</h1>
-            <img src={result.image} />
+      <div style={{alignItems: 'center', flexWrap: 'wrap', display: 'flex', justifyContent: 'center'}}>
+        {results && results.map((r, i) => (
+          <div key={i}>
+            <h1>{r.name}</h1>
+            <img src={r.image} />
           </div>
-        )}
+        ))}
       </div>
     </div>
   )

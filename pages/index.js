@@ -11,7 +11,7 @@ const Home = () => (
     <main>
       <h1>Rick and Morty</h1>
       <div style={{margin: 'auto', display: 'flex', justifyContent: 'center' }}>
-        <div style={{maxWidth: 300, alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
+        <div style={{maxWidth: 1000, alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
           <SearchBox />
         </div>
       </div>
