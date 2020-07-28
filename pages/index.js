@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import SearchBox from '../components/SearchBox'
 
 const Home = () => (
   <div className="container">
@@ -11,8 +12,7 @@ const Home = () => (
       <h1>Rick and Morty</h1>
       <div style={{margin: 'auto', display: 'flex', justifyContent: 'center' }}>
         <div style={{maxWidth: 300, alignItems: 'center', display: 'flex', justifyContent: 'center'}}>
-          <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"/>
-          <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg"/>
+          <SearchBox />
         </div>
       </div>
     </main>
